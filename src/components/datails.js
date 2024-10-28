@@ -1,9 +1,10 @@
 import React, { useEffect, useState } from 'react';
 
-const HomePage = () => {
+const PetDetailsPage = () => { // Renamed component
   const [pets, setPets] = useState([]);
   const [error, setError] = useState(null);
-  const [type, setType] = useState(''); // Add state for pet type if needed
+  const [loading, setLoading] = useState(true); // Loading state
+  const [type, setType] = useState('');
 
   const fetchPets = async () => {
     try {
@@ -16,16 +17,19 @@ const HomePage = () => {
     } catch (err) {
       console.error('Fetch pets error:', err);
       setError(err.message);
+    } finally {
+      setLoading(false); // Set loading to false after fetch
     }
   };
 
   useEffect(() => {
     fetchPets();
-  }, [type]); // Fetch pets whenever the type changes
+  }, [type]);
 
   return (
     <div>
-      {error && <p>Error: {error}</p>} {/* Display error message if any */}
+      {error && <p>Error: {error}</p>}
+      {loading && <p>Loading...</p>} {/* Loading feedback */}
       <ul>
         {pets.map((pet) => (
           <li key={pet.id}>{pet.name}</li>
@@ -35,4 +39,4 @@ const HomePage = () => {
   );
 };
 
-export default HomePage;
+export default PetDetailsPage; // Export renamed component

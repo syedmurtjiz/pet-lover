@@ -5,26 +5,17 @@ const Navigation = () => {
     <nav>
       <ul>
         <li>
-          <NavLink
-            to="/"
-            className={({ isActive }) => (isActive ? 'active' : undefined)} // Use className with a function
-          >
+          <NavLink to="/" className={({ isActive }) => (isActive ? 'active' : undefined)}>
             Home
           </NavLink>
         </li>
         <li>
-          <NavLink
-            to="/about"
-            className={({ isActive }) => (isActive ? 'active' : undefined)}
-          >
+          <NavLink to="/about" className={({ isActive }) => (isActive ? 'active' : undefined)}>
             About
           </NavLink>
         </li>
         <li>
-          <NavLink
-            to="/cats"
-            className={({ isActive }) => (isActive ? 'active' : undefined)}
-          >
+          <NavLink to="/cats" className={({ isActive }) => (isActive ? 'active' : undefined)}>
             Cats
           </NavLink>
         </li>
