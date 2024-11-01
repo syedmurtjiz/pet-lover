@@ -1,22 +1,18 @@
 import React from 'react';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
-import Navigation from './components/navigation'; // Ensure the case matches your file structure
 import HomePage from './components/HomePage';
-import PetDetailsPage from './components/datails'; // Check the path and filename for details component
-import SearchPage from './components/search';
-import PetNotFoundPage from './components/notfound';
+import './App.css'; // Make sure the case matches exactly
 
 const App = () => {
   return (
     <Router>
-      <Navigation />
+      <div className="app-header">
+
+        <h2>Pets Lover</h2>
+      </div>
       <Routes>
         <Route path="/" element={<HomePage />} />
         <Route path="/:type" element={<HomePage />} />
-        <Route path="/:type/:id" element={<PetDetailsPage />} />
-        <Route path="/search" element={<SearchPage />} />
-        <Route path="/not-found" element={<PetNotFoundPage />} />
-        <Route path="*" element={<PetNotFoundPage />} />
       </Routes>
     </Router>
   );

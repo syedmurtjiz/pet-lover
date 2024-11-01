@@ -1,0 +1,99 @@
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+  font-family: Arial, sans-serif;
+  color: #333;
+}
+
+.heading {
+  text-align: center;
+  font-size: 2em;
+  margin-bottom: 20px;
+  background: linear-gradient(90deg, #007BFF, #00CFFF, #0066CC); /* Blue gradient shades */
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  color: transparent;
+}
+
+.nav-links {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  margin-bottom: 20px;
+}
+
+.nav-links a {
+  text-decoration: none;
+  color: #007BFF;
+  font-weight: bold;
+  transition: color 0.3s;
+  border: 2px solid #007BFF; /* Border color for links */
+  padding: 10px 15px; /* Padding for links */
+  border-radius: 5px; /* Rounded corners */
+}
+
+.nav-links a:hover {
+  color: #0056b3;
+  background-color: #f0f0f0; /* Change background on hover */
+}
+
+input[type="text"] {
+  display: block;
+  width: 80%;
+  max-width: 400px;
+  margin: 0 auto 30px;
+  padding: 10px;
+  font-size: 1em;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+}
+
+.animal-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 20px;
+}
+
+.animal-item {
+  text-align: center;
+  padding: 15px;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.animal-item:hover {
+  transform: scale(1.05);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.animal-item img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover; /* Ensures the image covers the area without distortion */
+  border-radius: 10px;
+  margin-bottom: 10px;
+}
+
+.animal-item h2 {
+  font-size: 1.25em;
+  color: #007BFF;
+  cursor: pointer;
+  margin: 10px 0;
+}
+
+.animal-item h2:hover {
+  text-decoration: underline;
+}
+
+.animal-info {
+  padding-top: 10px;
+  font-size: 0.9em;
+  color: #555;
+}
+
+.animal-info p {
+  margin: 5px 0;
+}
