@@ -1,15 +1,14 @@
 import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
-import './homepage.css'; // Make sure the case matches exactly
+import './homepage.css'; // Ensure the case matches exactly
 
 const HomePage = () => {
   const [cats, setCats] = useState([]);
   const [dogs, setDogs] = useState([]);
   const [filteredAnimals, setFilteredAnimals] = useState([]);
-  const [error, setError] = useState(null);
   const [searchTerm, setSearchTerm] = useState(''); 
   const [expandedAnimalId, setExpandedAnimalId] = useState(null);
-  const [showing, setShowing] = useState('all');
+  
   const CAT_API_KEY = 'live_UZebaDax2R4t5v5BRN8wXDFyCwF9Du57WVzfnzpZHpKMIvzY9NBGjz8VJsngF9al';
   const DOG_API_KEY = 'live_KnMmktEhsdq5alSzZwyWhsiVMzFcgmaQI4G7hKXwim4PTOV4IfUnqsiJ4DHnhNT9';
 
@@ -38,7 +37,6 @@ const HomePage = () => {
       setFilteredAnimals(prev => [...prev, ...catsWithImages]);
     } catch (error) {
       console.error('Error fetching cats:', error);
-      setError('Failed to fetch cat breeds.');
     }
   };
 
@@ -61,7 +59,6 @@ const HomePage = () => {
       setFilteredAnimals(prev => [...prev, ...dogsWithImages]);
     } catch (error) {
       console.error('Error fetching dogs:', error);
-      setError('Failed to fetch dog breeds.');
     }
   };
 
@@ -84,7 +81,6 @@ const HomePage = () => {
   };
 
   const handleShow = (type) => {
-    setShowing(type);
     setSearchTerm('');
 
     if (type === 'cats') {
@@ -103,13 +99,7 @@ const HomePage = () => {
 
   return (
     <div className="container">
-      <style>{`
-        /* Add your CSS styling here */
-      `}</style>
-
-      
       <h1 className='heading'>Cat and Dog Breeds</h1>
-      
       
       <div className="nav-links">
         <Link to="#" onClick={() => handleShow('all')}>All Pets</Link>
